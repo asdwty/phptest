@@ -1,6 +1,10 @@
 pipeline {
 	agent none
 	stages {
+		stage("checkout")
+		{
+			checkout scm
+		}
 		stage('Integration UI Test') {
 			parallel {
 				stage('Deploy') {
